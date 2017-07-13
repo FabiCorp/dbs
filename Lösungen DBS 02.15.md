@@ -33,10 +33,10 @@ Ein Patient kann ein Medikament bekommen ohne einen Arzt zu haben.  (1)
 
 unten:   
 ```
-verabreicht(Mediakament, Arzt):
+verabreicht(Medikament, Arzt):
 Ein Medikament wird von einem oder mehreren Ärzten verabreicht. (1)
 Es gibt Ärzte die keine Medikamente verabreichen.
-bekommt(Mediakment, Patient):
+bekommt(Medikament, Patient):
 Ein Patient bekommt mindestens ein Medikament. (2)
 ```
 
