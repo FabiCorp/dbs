@@ -39,9 +39,10 @@ bekommt(Mediakment, Patient):
 
 
 b)   
-|Nr.|Antwort|  
-| ----- |---------| -----|
-|1.|(keine Ahnung) |
+
+| Nr. | Antwort |  
+| ----- |---------|
+|1.|(keine Ahnung)|  
 |2.|wahr|    
 |3.|(keine Ahnung)|  
 |4.|wahr|  
@@ -51,6 +52,12 @@ b)
 |8.|falsch|
 |9.|falsch|  
 |10.|wahr|  
+
+
+## Aufgabe 2
+
+
+
 
 
 ## Aufgabe 3
