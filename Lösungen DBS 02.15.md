@@ -20,18 +20,18 @@ jedes Medizinische Personal ist Arzt oder Pflegepersonal
 ```
 unten Partitionierung:  
 ```
-jedes Medizinische Personal kann Arzt oder Pflegepersonal sein.  
+jedes Medizinische Personal kann Arzt oder Pflegepersonal sein (aber muss nicht).  
 ```
 3. bis 6. Patient, Medikament, Arzt  
 **(ab hier unsicher, fehlen noch Unterschiede bitte schreiben um zu ergänzen!)**  
-  --> Aus Folien: N entspricht etwa \*, also [0,\*]  
-  oben:  
+--> Aus Folien: N entspricht etwa \*, also [0,\*]  
+oben:  
 ```
 Ein Patient kann von einem Arzt behandelt werden ohne Mediakamente zu bekommen. (2)   
 Ein Patient kann ein Medikament bekommen ohne einen Arzt zu haben.  (1)
 ```
 
-  unten:   
+unten:   
 ```
 verabreicht(Mediakament, Arzt):
 Ein Medikament wird von einem oder mehreren Ärzten verabreicht. (1)
@@ -211,6 +211,7 @@ Definition Nicht Serialisierbar:
 Als nicht serialisierbar bezeichnet man eine Historie, wenn sie nicht zum
 selben Ergebnis führt wie eine nacheinander (seriell) ausgeführte
 Historie über dieselben Transaktionen.
+
 Definition STRICT:
 Beim Schreiben Element x darauf achten dass alle Transaktionen
 die X verändern haben committed oder aborted sind.
