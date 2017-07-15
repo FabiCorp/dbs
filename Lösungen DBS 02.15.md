@@ -1,8 +1,11 @@
 # Lösungen DBS 02.2015
 
+Alle Lösungen ohne Gewähr!
+
 ## Aufgabe 1
 a)
 1. Mitarbeiter, Medizinisches- und Verwaltungspersonal:  
+
 oben Partitionierung:  
 ```
 jedes Medizinisches- oder Verwaltungspersonal ist ein Mitarbeiter,  
@@ -14,6 +17,7 @@ nicht jedes Medizinisches- oder Verwaltungspersonal ist ein Mitarbeiter,
 aber jeder Mitarbeiter ist Medizinisches- oder Verwaltungspersonal.  
 ```
 2. Medizinisches Personal, Arzt, Pflegepersonal:  
+
 oben totale Partitionierung:  
 ```
 jedes Medizinische Personal ist Arzt oder Pflegepersonal  
@@ -201,8 +205,12 @@ Was für weitere Histories zu beachten ist, ist das r2[x] immer vor w1[x] sein
 muss, w2[x] vor r1[x], w2[y] vor r1[y], zwischen w1[x] und dem hinteren r1[x]
 darf nicht von T2 geschrieben werden, zwischen w2[x] und r2[x]
 darf nicht von T1 geschrieben werden, um die Serialisierbarkeit zu garantieren.
-Mit diesen Einschränkungen gibt es 14 Möglichkeiten, da man nur r1[x] und r2[x]
-beliebig verschieben kann und r1[x] vor r1[x] laufen muss.
+Mit diesen Einschränkungen gibt es 14 Möglichkeiten, da man nur r1[x] und r1[y]
+beliebig verschieben kann und r1[x] vor r1[y] laufen muss.
+Weitere Beispiele (vergleiche mit H1 oben):
+H2: w2[x] w2[y] r2[z] w2[z] r1[x](<--verschoben) r2[x] r1[y] w1[x] w1[y] r1[x] c1 c2
+H3: w2[x] w2[y] r2[z] w2[z] r1[x] r1[y](<--verschoben) r2[x] w1[x] w1[y] r1[x] c1 c2
+H4: und so weiter...
 ```
 
 b)
