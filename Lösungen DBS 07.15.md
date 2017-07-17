@@ -203,7 +203,7 @@ e)
 (SELECT * FROM Flugstrecke f1
 INNER JOIN Flugstrecke f2
 ON f1.id IS NOT f2.id
-WHERE f2.abflug = f1.abflug
+WHERE f2.abflug = f1.flugziel
 AND f1.abflug IS NOT f2.flugziel)
 
 (SELECT * FROM Flugstrecke f1
