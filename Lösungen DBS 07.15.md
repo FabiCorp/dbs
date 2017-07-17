@@ -197,8 +197,6 @@ ON Stadt = Ziel
 
 e)
 
-*hier fehlt noch korrekte lösung*
-
 ```sql
 Meine Idee noch nicht fertig:
 (SELECT * FROM Flugstrecke f1
