@@ -3,6 +3,7 @@
 Alle Lösungen ohne Gewähr!
 
 ## Aufgabe 1
+
 a)
 1. Mitarbeiter, Medizinisches- und Verwaltungspersonal:  
 
@@ -27,6 +28,7 @@ unten Partitionierung:
 jedes Medizinische Personal kann Arzt oder Pflegepersonal sein (aber muss nicht).  
 ```
 3. bis 6. Patient, Medikament, Arzt  
+
 **(ab hier unsicher, fehlen noch Unterschiede bitte schreiben um zu ergänzen!)**  
 --> Aus Folien: N entspricht etwa \*, also [0,\*]  
 oben:  
@@ -48,7 +50,7 @@ Ein Patient bekommt mindestens ein Medikament. (2)
 b)   
 
 | Nr. | Antwort |  
-| ----- |---------|
+|---|---|
 |1.|(keine Ahnung)|  
 |2.|wahr|    
 |3.|wahr|  
@@ -234,7 +236,7 @@ r1[x] vor w2[x] um History nicht serialisierbar zu machen.
 c)
 ```
 Um weitere Histories zu finden die die gewollten Eigenschaften erfüllen:
-T1 kann nur schreiben nach Commit von T2. Im oberen Beispiel hat man
+T1 kann nur schreiben nach Commit von T2. Im oberen Beispiel(H1 Teil b) ) hat man
 also nur die Möglichkeit r1[x] r1[y] nach vorne zu bewegen.
 Außerdem muss entweder r1[x] vor w2[x] oder r1[y] vor w2[y].
 Somit ergeben sich für diese Form 3 Möglichkeiten.
