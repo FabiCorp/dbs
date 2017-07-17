@@ -197,13 +197,15 @@ ON Stadt = Ziel
 
 e)
 
+*hier fehlt noch korrekte lösung*
+
 ```sql
 (SELECT * FROM Flugstrecke f1
 INNER JOIN Flugstrecke f2
 ON f1.id IS NOT f2.id
 WHERE f2.abflug = f1.abflug
 AND f1.abflug IS NOT f2.flugziel)
-INNER JOIN
+
 (SELECT * FROM Flugstrecke f1
 INNER JOIN Flugstrecke f2 ON f1.id IS NOT f2.id
 INNER JOIN Flugstrecke f3 ON f1.id IS NOT f3.id AND f2.id IS NOT f3.id
