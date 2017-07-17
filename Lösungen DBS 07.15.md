@@ -200,6 +200,7 @@ e)
 *hier fehlt noch korrekte lösung*
 
 ```sql
+Meine Idee noch nicht fertig:
 (SELECT * FROM Flugstrecke f1
 INNER JOIN Flugstrecke f2
 ON f1.id IS NOT f2.id
@@ -214,6 +215,28 @@ AND f2.flugziel = f2.abflug
 AND f1.abflug IS NOT f2.flugziel
 AND f1.abflug IS NOT f3.flugziel
 AND f2.abflug IS NOT f3.flugziel)
+
+Rauls Lösung:
+SELECT t4.c1 as Abflug,
+	(CASE  WHEN t4.c1 = t4.c4 THEN t4.c3 ELSE t4.c4 END) as Flugziel,
+	(CASE WHEN t4.c1 = t4.c4 THEN 2 ELSE 3 END) as Anzahl_Zwischenhalte,
+	(CASE WHEN t4.c1 = t4.c4 THEN 
+	(SELECT SUM(Flugstrecken.preis) 
+  FROM Flugstrecken 
+  WHERE (Flugstrecken.abflug = t4.c1 AND Flugstrecken.flugziel = t4.c2) 
+  OR (Flugstrecken.abflug = t4.c2 AND Flugstrecken.flugziel = t4.c3)) 
+	ELSE 
+	(SELECT SUM(Flugstrecken.preis) 
+  FROM Flugstrecken 
+  WHERE (Flugstrecken.abflug = t4.c1 AND Flugstrecken.flugziel = t4.c2) 
+  OR (Flugstrecken.abflug = t4.c2 AND Flugstrecken.flugziel = t4.c3) 
+  OR (Flugstrecken.abflug = t4.c3 AND Flugstrecken.flugziel = t4.c4))
+		END) as Kosten
+FROM 
+(SELECT t1.abflug as c1, t1.flugziel as c2, t2.flugziel as c3, t3.flugziel as c4 FROM Flugstrecken t1
+JOIN Flugstrecken t2 ON t1.flugziel = t2.abflug
+JOIN Flugstrecken t3 ON t2.flugziel = t3.abflug
+WHERE t1.abflug <> t2.flugziel) t4
 ```
 
 ## Aufgabe 4
