@@ -171,7 +171,7 @@ c)
 
 ```sql
 DELETE FROM Buchungen b
-ON b.p_id IS IN (SELECT f.id FROM Flugstrecke f
+WHERE b.p_id IS IN (SELECT f.id FROM Flugstrecke f
 WHERE f.firma = "LuftBW")
 
 DELETE FROM Flugstrecke f
