@@ -149,12 +149,12 @@ d)
 a)
 
 ```sql
-SELECT p.nachname AS Nachname, p.vorname AS Vorname,
-count(b.f_id) AS Anzahl Buchungen, sum(preis) AS Kosten   
+SELECT p.name AS Nachname, p.vorname AS Vorname,
+count(b.f_id) AS Anzahl_Buchungen, sum(preis) AS Kosten   
 FROM Passagiere p
 INNER JOIN Buchungen b ON p.id = b.p_id
-INNER JOIN Flugstrecken f ON b.f_id = f.id
-GROUP BY p.vorname, p.nachname
+INNER JOIN Flugstrecke f ON b.f_id = f.id
+GROUP BY p.vorname, p.name
 ```
 
 b)
