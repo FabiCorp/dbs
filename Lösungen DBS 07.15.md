@@ -7,28 +7,28 @@ Alle Lösungen ohne Gewähr!
 a)
 
 ```
-Zwei Partitionierungen (Mehrfache Spezialisierung):
+Mehrfache Spezialisierung:
 Fahrzeug -> Landfahrzeug
 Fahrzeug -> Wasserfahrzeug
 (Pfeil gleiche Richtung wie im EER-Modell)
-Durch doppelte Partitionierung kann Fahrezeug beides sein.
-Partitionierung bedeutet hier das Fahrezeug Landfahrzeug oder Wasserfahrzeug
+Durch doppelte Spezialisierung kann Fahrezeug beides sein.
+Spezialisierung bedeutet hier das Fahrezeug Landfahrzeug oder Wasserfahrzeug
 sein kann, aber nicht sein muss.
 ```
 *Inhalt: ER-Modell*
 
 b)
 
-| Nr. | Antwort |  
-|---|---|
-|1.|falsch|  
-|2.|wahr|    
-|3.|wahr|  
-|4.|wahr|  
-|5.|keine Ahnung|  
-|6.|wahr|  
+| Nr. | Richtig | Falsch | 
+|---|---| --- |
+|1.||x|  
+|2.|x||    
+|3.|x||  
+|4.|x|| 
+|5.|(x)||
+|6.||(x)|
 
-*für 5. bitte Lösung schicken*
+*für 5. 6. bitte Lösung schicken*
 
 c)
 
@@ -37,11 +37,10 @@ Hier steht **fett** für Primärschlüssel
 
 Assistent(**Name**, Fachgebiet, *Professor.Name* [NOT NULL])  
 Professor(**Name**, Lehrstuhl, *Raum* [UNIQUE, NOT NULL])  
-Raum(**Raum-Nr**, Größe, *Geb-Nr* [NOT NULL])    
-Gebäude(**Geb-Nr**, Anzahl-Etagen)  
-**hat**(**Raum-Nr**, Geb-Nr)
+Raum(**Raum-Nr**, Größe)    
+Gebäude(**Geb-Nr**, **Raum-Nr**(FK), Anzahl-Etagen)  
 
-nicht sicher ob man noch **hat** in Raum stecken sollte...  
+
 [ arbeitet-für(**Assistent.Name**, Professor.Name) ]  <--- in Assistent  
 [ hat-Büro(**Name**, Raum-Nr)  ] <--- in Professor
 
