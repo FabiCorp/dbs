@@ -180,18 +180,12 @@ WHERE firma = "LuftBW"
 d)
 
 ```sql
-SELECT Stadt, (AnzAbflug + AnzFlugziel) as Gesamtanzahl an Passagieren
-FROM
-(SELECT f.abflug as Stadt, count(*) as AnzAbflug
-FROM Flugstrecke f
-INNER JOIN Buchungen on f.id = b.f_id
-GROUP BY f.abflug)
-INNER JOIN
-(SELECT f.flugziel as Ziel, count(*) as AnzFlugziel
-FROM Flugstrecke f
-INNER JOIN Buchungen on f.id = b.f_id
-GROUP BY f.flugziel)
-ON Stadt = Ziel
+SELECT  f.abflug, f.flugziel, count(buchungen.p_id)
+FROM Buchungen 
+JOIN Flugstrecke f
+ON Buchungen.f_id = f.id
+GROUP BY f.flugziel, f.abflug
+ORDER BY COUNT(Buchungen.p_id)
 ```
 
 e)
@@ -213,7 +207,7 @@ AND f1.abflug IS NOT f2.flugziel
 AND f1.abflug IS NOT f3.flugziel
 AND f2.abflug IS NOT f3.flugziel)
 
-Rauls Lösung:
+Raouls Lösung:
 SELECT t4.c1 as Abflug,
 	(CASE  WHEN t4.c1 = t4.c4 THEN t4.c3 ELSE t4.c4 END) as Flugziel,
 	(CASE WHEN t4.c1 = t4.c4 THEN 2 ELSE 3 END) as Anzahl_Zwischenhalte,
