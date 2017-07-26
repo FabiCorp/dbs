@@ -180,12 +180,21 @@ WHERE firma = "LuftBW"
 d)
 
 ```sql
-SELECT  f.abflug, f.flugziel, count(buchungen.p_id)
+Giorgios Lösung:
+SELECT Stadt, sum(NUM) AS Anzahl_Passagiere FROM
+(SELECT  f.abflug AS Stadt, count(buchungen.p_id) AS NUM
 FROM Buchungen 
 JOIN Flugstrecke f
 ON Buchungen.f_id = f.id
-GROUP BY f.flugziel, f.abflug
-ORDER BY COUNT(Buchungen.p_id)
+GROUP BY f.abflug
+UNION ALL
+SELECT f.flugziel AS Stadt, count(buchungen.p_id) AS NUM
+FROM Buchungen 
+JOIN Flugstrecke f
+ON Buchungen.f_id = f.id
+GROUP BY f.flugziel)
+GROUP BY Stadt 
+ORDER BY sum(NUM)
 ```
 
 e)
