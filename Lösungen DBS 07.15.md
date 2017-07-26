@@ -200,21 +200,22 @@ ORDER BY sum(NUM)
 e)
 
 ```sql
-Meine Idee noch nicht fertig:
-(SELECT * FROM Flugstrecke f1
+Meine Idee:
+SELECT f1.abflug as Abflug, f2.flugziel as Flugziel, 1 as Zwischenhalt, sum(f1.preis+f2.preis) AS Preis 
+FROM Flugstrecke f1
 INNER JOIN Flugstrecke f2
-ON f1.id IS NOT f2.id
 WHERE f2.abflug = f1.flugziel
-AND f1.abflug IS NOT f2.flugziel)
-
-(SELECT * FROM Flugstrecke f1
-INNER JOIN Flugstrecke f2 ON f1.id IS NOT f2.id
-INNER JOIN Flugstrecke f3 ON f1.id IS NOT f3.id AND f2.id IS NOT f3.id
+AND f1.abflug IS NOT f2.flugziel
+UNION ALL
+SELECT f1.abflug as Abflug, f3.flugziel as Flugziel, 2 as Zwischenhalt, sum(f1.preis+f2.preis+f3.preis) AS Preis 
+FROM Flugstrecke f1
+INNER JOIN Flugstrecke f2 
+INNER JOIN Flugstrecke f3 
 WHERE f1.flugziel = f2.abflug
-AND f2.flugziel = f2.abflug
+AND f2.flugziel = f3.abflug
 AND f1.abflug IS NOT f2.flugziel
 AND f1.abflug IS NOT f3.flugziel
-AND f2.abflug IS NOT f3.flugziel)
+AND f2.abflug IS NOT f3.flugziel
 
 Raouls Lösung:
 SELECT t4.c1 as Abflug,
