@@ -5,3 +5,5 @@ Wenn ihr Fehler seht oder Lösungen ergänzen wollt dann schreibt mir
 oder unter fabi.heisenberg@gmail.com
 
 **Keine Macht den Klausuren ohne Lösungen!**
+
+Die Datenbanken können einfach im DB Browser für SQLite genutzt werden.
