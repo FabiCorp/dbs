@@ -44,6 +44,7 @@ Ein Medikament wird von einem oder mehreren Ärzten verabreicht. (1)
 Es gibt Ärzte die keine Medikamente verabreichen.
 bekommt(Medikament, Patient):
 Ein Patient bekommt mindestens ein Medikament. (2)
+Ein Medikament kann von keinem Arzt verabreicht werden.
 ```
 
 
@@ -109,11 +110,9 @@ dann muss: F - f + g äquivalent zu F sein wenn Attribut a überflüssig
 (wir haben in F FD f durch FD g ersetzt)
 
 Nach Synthese:
-A  -> BE
+A  -> BED
 F  -> CD
-AE -> D
-CD -> EF
-C  -> B
+C -> EFB
 
 Alle weggefallenen FDs sind redundant
 und alle weggefallenen Attribute sind überflüssig :)
