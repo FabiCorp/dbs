@@ -269,5 +269,5 @@ c)
 ```
 H1 = w1(x) r2(x) r3(x) r4(x) c1 c2 c3 c4
 H2 = w1(x) w2(x) w3(x) w4(x) w1(x) w2(x) w3(x) c1 c2 c3 c4
-H3 = w1(x) r2(x) r4(x) w4(y) r3(y) r1(y) c1 c2 c3 c4
+H3 = r1(x) w2(x) r4(x) r4(y) w3(y) r1(y) c1 c2 c3 c4
 ```
