@@ -52,11 +52,11 @@ b)
 
 | Nr. | Antwort |  
 |---|---|
-|1.|(keine Ahnung)|  
+|1.|glaube wahr|  
 |2.|wahr|    
 |3.|wahr|  
 |4.|falsch|  
-|5.|wahr|  
+|5.|falsch|  
 |6.|wahr|  
 |7.|wahr|  
 |8.|falsch|
