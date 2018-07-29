@@ -255,12 +255,11 @@ a)
 b)
 
 ```
-K = {{B,G},{B,F},{A,F},{A,G},{A,C,E},{B,C,E},{D,C,E},{D,F},{D,G},{F,B,C},{G,B,C}}
+K = {{B,G},{B,F},{A,F},{A,G},{A,C,E},{B,C,E},{D,C,E},{D,F},{D,G}}
 R befindet sich in 1NF, da die Attribute
 der Relation atomar sind (aus Aufgabenstellung).
-R befindet sich nicht mehr in 2NF, da Nichtprimattribute
-von einer echten Teilmenge der Schlüsselkandidaten abhängen.
-Bsp. AF ist Schlüssel und B hängt nur von A ab.
+R befindet sich in 2NF da keine Nicht-Primattribute von Teilmengen von Schlüsselkandidaten abhängen.
+R befindet sich in 3NF da keine transitiven Abhängigkeiten von Nicht-Primattributen existieren
 ```
 
 
