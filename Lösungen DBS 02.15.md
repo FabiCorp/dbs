@@ -70,7 +70,7 @@ a)
 
 ```
 Menge aller möglichen Schlüssel:
-K={{C,D},{A,C}}
+K={{C,D},{A,C},{C,E}}
 F(A)+ = {A->E, A->F, A->A}
 {A}F* = {A,E,F}
 ```
